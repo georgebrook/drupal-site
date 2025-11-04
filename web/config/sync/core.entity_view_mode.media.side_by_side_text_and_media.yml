@@ -1,0 +1,11 @@
+uuid: ce4e76b0-9115-4ec7-a324-82ffcc8645fd
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - media
+id: media.side_by_side_text_and_media
+label: 'Side by side text and media'
+description: null
+targetEntityType: media
+cache: true

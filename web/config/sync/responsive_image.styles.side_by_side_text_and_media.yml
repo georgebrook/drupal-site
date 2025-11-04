@@ -1,0 +1,35 @@
+uuid: 0434d295-4f8a-489b-a1bc-e8635ab134e9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - image.style.16_9_desktop
+    - image.style.16_9_mobile
+    - image.style.9_16_mobile
+  theme:
+    - mytheme
+id: side_by_side_text_and_media
+label: 'Side by side text and media'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_desktop
+    breakpoint_id: mytheme.desktop
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_desktop
+    breakpoint_id: mytheme.desktop
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 9_16_mobile
+    breakpoint_id: mytheme.mobile
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 9_16_mobile
+    breakpoint_id: mytheme.mobile
+    multiplier: 2x
+breakpoint_group: mytheme
+fallback_image_style: 16_9_mobile

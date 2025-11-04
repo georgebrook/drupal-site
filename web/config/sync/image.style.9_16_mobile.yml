@@ -1,0 +1,26 @@
+uuid: 9c488fe4-e511-45df-9eda-4e873eee3a9b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - crop.type.portrait
+  module:
+    - crop
+name: 9_16_mobile
+label: '9:16 Mobile'
+effects:
+  af53bbcb-32ec-4e3b-9d62-5d672dc13128:
+    uuid: af53bbcb-32ec-4e3b-9d62-5d672dc13128
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: portrait
+      automatic_crop_provider: null
+  1fab951d-00b3-47c8-94c7-a97f8a7cc0d3:
+    uuid: 1fab951d-00b3-47c8-94c7-a97f8a7cc0d3
+    id: image_scale
+    weight: 2
+    data:
+      width: 400
+      height: null
+      upscale: false

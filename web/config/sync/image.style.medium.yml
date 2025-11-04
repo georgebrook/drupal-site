@@ -1,0 +1,15 @@
+uuid: 640c521f-0a90-4aa9-b9a4-368a10853974
+langcode: en-gb
+status: true
+dependencies: {  }
+name: medium
+label: Medium
+effects:
+  787c0393-3077-49db-bc48-1c35d53776bb:
+    uuid: 787c0393-3077-49db-bc48-1c35d53776bb
+    id: image_scale
+    weight: null
+    data:
+      width: 220
+      height: 220
+      upscale: false

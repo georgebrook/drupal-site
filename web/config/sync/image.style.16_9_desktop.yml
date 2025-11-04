@@ -1,0 +1,26 @@
+uuid: 2cd7dc45-ad2a-4379-9463-055689ab3949
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - crop.type.landscape
+  module:
+    - crop
+name: 16_9_desktop
+label: '16:9 Desktop'
+effects:
+  bb23b33f-f03c-4693-97f2-3594af6cb7a6:
+    uuid: bb23b33f-f03c-4693-97f2-3594af6cb7a6
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: landscape
+      automatic_crop_provider: null
+  23e78abc-ef1c-4ec2-bcf6-14cf9a5d7890:
+    uuid: 23e78abc-ef1c-4ec2-bcf6-14cf9a5d7890
+    id: image_scale
+    weight: 2
+    data:
+      width: 3000
+      height: null
+      upscale: false

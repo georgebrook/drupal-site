@@ -1,0 +1,33 @@
+uuid: 29f05d23-b935-40a9-9fe9-5e3a3511941c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.side_by_side_text_and_media.field_media
+    - field.field.paragraph.side_by_side_text_and_media.field_text
+    - paragraphs.paragraphs_type.side_by_side_text_and_media
+  module:
+    - media_library
+id: paragraph.side_by_side_text_and_media.default
+targetEntityType: paragraph
+bundle: side_by_side_text_and_media
+mode: default
+content:
+  field_media:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_text:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

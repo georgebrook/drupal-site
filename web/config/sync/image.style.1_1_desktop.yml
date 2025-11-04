@@ -1,0 +1,26 @@
+uuid: d9956be3-0ba9-44ef-af1a-7bd316169266
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - crop.type.square
+  module:
+    - crop
+name: 1_1_desktop
+label: '1:1 Desktop'
+effects:
+  57174766-54ac-4da6-b9c6-e5f8c397c102:
+    uuid: 57174766-54ac-4da6-b9c6-e5f8c397c102
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: square
+      automatic_crop_provider: null
+  9b2ee771-234e-4db9-8300-aaa5060cc558:
+    uuid: 9b2ee771-234e-4db9-8300-aaa5060cc558
+    id: image_scale
+    weight: 2
+    data:
+      width: 500
+      height: null
+      upscale: false

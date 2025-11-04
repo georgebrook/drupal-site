@@ -1,0 +1,34 @@
+uuid: 5a6fdb94-b007-4d7f-88c2-b399cc265699
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_components
+    - node.type.page
+    - paragraphs.paragraphs_type.side_by_side_text_and_media
+  module:
+    - entity_reference_revisions
+id: node.page.field_components
+field_name: field_components
+entity_type: node
+bundle: page
+label: Components
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      side_by_side_text_and_media: side_by_side_text_and_media
+    negate: 0
+    target_bundles_drag_drop:
+      basic_text:
+        weight: 3
+        enabled: true
+      side_by_side_text_and_media:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

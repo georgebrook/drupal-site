@@ -1,0 +1,29 @@
+uuid: 70be2cef-5f57-4e06-a300-78c81fc37ac0
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media
+    - media.type.image
+    - paragraphs.paragraphs_type.side_by_side_text_and_media
+id: paragraph.side_by_side_text_and_media.field_media
+field_name: field_media
+entity_type: paragraph
+bundle: side_by_side_text_and_media
+label: Media
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

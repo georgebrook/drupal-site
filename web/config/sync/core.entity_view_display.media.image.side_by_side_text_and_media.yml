@@ -1,0 +1,35 @@
+uuid: 21c56b5f-b9a3-49fe-ad35-294318d7d01c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.side_by_side_text_and_media
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.side_by_side_text_and_media
+  module:
+    - responsive_image
+_core:
+  default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
+id: media.image.side_by_side_text_and_media
+targetEntityType: media
+bundle: image
+mode: side_by_side_text_and_media
+content:
+  field_media_image:
+    type: responsive_image
+    label: above
+    settings:
+      responsive_image_style: side_by_side_text_and_media
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

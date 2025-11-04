@@ -1,0 +1,19 @@
+uuid: 851510e3-abba-4029-96e4-6ee7394fe2e9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.side_by_side_text_and_media
+id: paragraph.side_by_side_text_and_media.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: side_by_side_text_and_media
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

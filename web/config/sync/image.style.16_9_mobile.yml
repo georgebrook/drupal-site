@@ -1,0 +1,26 @@
+uuid: 913cec32-8115-4082-a8b1-8a5ed73cea7a
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - crop.type.landscape
+  module:
+    - crop
+name: 16_9_mobile
+label: '16:9 Mobile'
+effects:
+  a0136fa1-20a2-4e10-9775-8728d8937b2b:
+    uuid: a0136fa1-20a2-4e10-9775-8728d8937b2b
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: landscape
+      automatic_crop_provider: null
+  3c3dce31-8d40-4e83-9604-07c2b23bc982:
+    uuid: 3c3dce31-8d40-4e83-9604-07c2b23bc982
+    id: image_scale
+    weight: 2
+    data:
+      width: 500
+      height: null
+      upscale: false

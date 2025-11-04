@@ -1,0 +1,26 @@
+uuid: aac34ba5-f9b4-4ffe-9c9e-bd6176cd1364
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - crop.type.portrait
+  module:
+    - crop
+name: 9_16_desktop
+label: '9:16 Desktop'
+effects:
+  2244c3a7-b14e-41d4-8b30-6fddb1071299:
+    uuid: 2244c3a7-b14e-41d4-8b30-6fddb1071299
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: portrait
+      automatic_crop_provider: null
+  f4f63414-de3d-420c-a9d9-83cc272fd2b6:
+    uuid: f4f63414-de3d-420c-a9d9-83cc272fd2b6
+    id: image_scale
+    weight: 2
+    data:
+      width: 500
+      height: null
+      upscale: false

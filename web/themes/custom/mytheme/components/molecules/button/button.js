@@ -1,0 +1,2 @@
+!function(e,t){"use strict";e.behaviors.myThemeBehavior={attach:function(e,s){t("myThemeBehavior","[data-my-theme-element]",e).forEach(function(e){e.addEventListener("click",function(){alert("Element clickedsssss!")}),e.classList.toggle("js-processed")})}}}(Drupal,once);
+//# sourceMappingURL=button.js.map
