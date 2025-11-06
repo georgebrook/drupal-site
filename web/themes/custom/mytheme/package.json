@@ -16,8 +16,11 @@
     "babel-loader": "^10.0.0",
     "core-js": "^3.46.0",
     "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
     "eslint-webpack-plugin": "^5.0.2",
     "glob": "^11.0.3",
+    "prettier": "^3.6.2",
     "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1",
     "webpack-merge": "^6.0.1"
