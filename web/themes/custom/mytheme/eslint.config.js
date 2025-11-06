@@ -1,11 +1,11 @@
 const js = require("@eslint/js");
 const { defineConfig } = require("eslint/config");
-const globals = require("globals"); 
+const globals = require("globals");
 const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
 
 module.exports = defineConfig([
   {
-    files: ["**/*.js"],
+    files: ["components/**/*.js"],
     plugins: {
       js,
     },
@@ -15,16 +15,16 @@ module.exports = defineConfig([
     },
     languageOptions: {
       globals: {
-        ...globals.browser, 
-        myGlobalVar: "readonly", 
-        anotherGlobal: "writable",
+        ...globals.browser,
+        Drupal: "readonly",
+        jQuery: "readonly",
       },
       parserOptions: {
-        ecmaVersion: 2022, 
-        sourceType: "module", 
+        ecmaVersion: 2022,
+        sourceType: "module",
       },
     },
   },
-  
+
   eslintPluginPrettierRecommended,
 ]);
