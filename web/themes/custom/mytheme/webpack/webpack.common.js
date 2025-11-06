@@ -3,6 +3,7 @@ const glob = require("glob");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const StylelintWebpackPlugin = require("stylelint-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin").default;
 
 // Collect entries dynamically
 const entries = {};
@@ -51,7 +52,7 @@ const commonConfig = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /svg-sprite\.js$/],
         use: "babel-loader",
       },
       {
@@ -74,6 +75,14 @@ const commonConfig = {
       filename: ({ chunk }) => {
         // Output CSS alongside JS but without the 'src' folder in the path
         return chunk.name.replace("-css", ".css");
+      },
+    }),
+    new SVGSpritemapPlugin(path.resolve(__dirname, "../images/icons/*.svg"), {
+      output: {
+        filename: "../images/icons-sprite.svg",
+      },
+      sprite: {
+        prefix: "icon-",
       },
     }),
   ],
