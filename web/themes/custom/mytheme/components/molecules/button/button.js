@@ -1,1 +1,1 @@
-!function(o,c){o.behaviors.myCustomBehavior={attach:function(o,e){c(".my-element",o).once("myCustomBehavior").each(function(){var o=c(this);o.css("background-color","yellow"),o.click(function(){alert("Clickedssss!")})})}}}(Drupal,jQuery);
+!function(o,c){o.behaviors.myCustomBehavior={attach:function(o){c(".my-element",o).once("myCustomBehavior").each(function(){var o=c(this);o.css("background-color","yellow"),o.click(function(){alert("Clickedssss!")})})}}}(Drupal,jQuery);
