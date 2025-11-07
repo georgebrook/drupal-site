@@ -1,0 +1,5 @@
+name: My Theme
+type: theme
+base theme: stark
+description: 'Custom Drupal Theme (SDC Ready)'
+core_version_requirement: ^11.2
