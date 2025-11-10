@@ -11,10 +11,10 @@ This theme is designed to work seamlessly with Drupal's **Single Directory Compo
 - ✅ **SDC Ready**: Fully compatible with Drupal's Single Directory Components
 - 🎨 **SCSS Support**: Modern CSS preprocessing with Sass
 - ⚡ **ES6+ JavaScript**: Modern JavaScript with Babel transpilation
-- 🔍 **Code Quality**: Integrated ESLint and Stylelint for code consistency
+- 🔍 **Code Quality**: Integrated ESLint and Stylelint with real-time file watching
 - 🎯 **SVG Sprite Generation**: Automatic SVG sprite compilation for icons
 - 📊 **Build Stats**: Detailed build performance metrics with WebpackBar
-- 🔄 **Watch Mode**: Live compilation during development
+- 🔄 **Watch Mode**: Live compilation and linting during development
 
 ## Project Structure
 
@@ -69,19 +69,20 @@ Webpack handles all asset compilation and optimization for this theme:
 ### JavaScript Processing
 - **Transpilation**: Converts modern ES6+ JavaScript to browser-compatible ES5
 - **Polyfills**: Automatically includes necessary polyfills via `core-js`
-- **Code Quality**: Runs ESLint to catch errors and enforce code standards
-- **Source Maps**: Generates source maps in development mode for debugging
+- **Code Quality**: Runs ESLint to catch errors and enforce code standards (fails build on errors)
+- **Source Maps**: Generates inline source maps in development mode for debugging
 
 ### SCSS/CSS Processing
 - **Compilation**: Converts SCSS to standard CSS
 - **Auto-prefixing**: Adds vendor prefixes for browser compatibility
 - **Extraction**: Separates CSS into individual files matching component structure
-- **Linting**: Validates SCSS code with Stylelint
+- **Linting**: Validates SCSS code with Stylelint (fails build on errors)
 
 ### SVG Sprite Generation
 - **Auto-Discovery**: Finds all SVG files in `images/icons/`
 - **Sprite Creation**: Combines them into a single `icons-sprite.svg` file
 - **Symbol IDs**: Prefixes each icon with `icon-` (e.g., `icon-home`)
+- **Watch Support**: Automatically rebuilds sprite when existing SVG files are modified
 - **No JS Output**: Generates only the SVG sprite (no unnecessary JavaScript)
 
 ### File Organization

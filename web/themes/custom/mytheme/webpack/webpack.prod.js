@@ -1,8 +1,8 @@
+const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
 const WebpackBar = require("webpackbar");
 
-module.exports = common.map((config, index) => ({
-  ...config,
+module.exports = merge(common, {
   mode: "production",
   devtool: false,
   stats: {
@@ -14,10 +14,11 @@ module.exports = common.map((config, index) => ({
     colors: true,
   },
   plugins: [
-    ...(config.plugins || []),
     new WebpackBar({
-      name: "Build Theme Assets",
+      name: " Build Theme Assets",
       color: "#4caf50",
+      reporters: ["fancy", "stats"],
+      profile: true,
     }),
   ],
-}));
+});

@@ -1,9 +1,26 @@
 const path = require("path");
 const glob = require("glob");
+const fs = require("fs");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const StylelintWebpackPlugin = require("stylelint-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin").default;
+
+// Custom plugin to clean up -css.js files
+class CleanCssJsPlugin {
+  apply(compiler) {
+    compiler.hooks.done.tap("CleanCssJsPlugin", (stats) => {
+      const outputPath = stats.compilation.outputOptions.path;
+      const cssJsFiles = glob.sync(path.join(outputPath, "**/*-css.js"));
+
+      cssJsFiles.forEach((file) => {
+        if (fs.existsSync(file)) {
+          fs.unlinkSync(file);
+        }
+      });
+    });
+  }
+}
 
 // Collect entries dynamically
 const entries = {};
@@ -63,14 +80,16 @@ const commonConfig = {
   },
   plugins: [
     new ESLintPlugin({
+      context: path.resolve(__dirname, ".."),
       extensions: ["js"],
-      files: "**/src/*.js",
-      emitWarning: true,
+      files: "components/**/src/*.js",
+      emitWarning: false,
+      emitError: true,
+      failOnError: true,
       overrideConfigFile: path.resolve(__dirname, "../eslint.config.js"),
     }),
-    new StylelintWebpackPlugin({
-      files: "**/src/*.scss",
-    }),
+    // Note: Stylelint runs via chokidar in npm start and via npm run lint:scss
+    // StylelintWebpackPlugin has issues detecting SCSS files processed through loaders
     new MiniCssExtractPlugin({
       filename: ({ chunk }) => {
         // Output CSS alongside JS but without the 'src' folder in the path
@@ -85,25 +104,11 @@ const commonConfig = {
         prefix: "icon-",
       },
     }),
+    new CleanCssJsPlugin(),
   ],
   resolve: {
     extensions: [".js", ".scss", ".css"],
   },
 };
 
-module.exports = [
-  {
-    entry: {},
-    plugins: [
-      new StylelintWebpackPlugin({
-        files: "components/**/*.scss",
-        configFile: path.resolve(__dirname, "../.stylelintrc.json"),
-        emitWarning: false,
-        emitError: true,
-        failOnError: true,
-        lintDirtyModulesOnly: false,
-      }),
-    ],
-  },
-  commonConfig,
-];
+module.exports = commonConfig;
